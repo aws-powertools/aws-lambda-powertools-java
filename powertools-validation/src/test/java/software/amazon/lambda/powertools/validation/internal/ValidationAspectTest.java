@@ -20,24 +20,6 @@ import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.when;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
-
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.ArgumentsSource;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
@@ -55,24 +37,45 @@ import com.amazonaws.services.lambda.runtime.events.KinesisEvent;
 import com.amazonaws.services.lambda.runtime.events.KinesisFirehoseEvent;
 import com.amazonaws.services.lambda.runtime.events.RabbitMQEvent;
 import com.amazonaws.services.lambda.runtime.events.SNSEvent;
+import com.amazonaws.services.lambda.runtime.events.SQSBatchResponse;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.amazonaws.services.lambda.runtime.events.ScheduledEvent;
-import com.amazonaws.services.lambda.runtime.serialization.PojoSerializer;
-import com.amazonaws.services.lambda.runtime.serialization.events.LambdaEventSerializers;
+import com.amazonaws.services.lambda.runtime.events.StreamsEventResponse;
+import com.amazonaws.services.lambda.runtime.tests.annotations.Event;
 import com.networknt.schema.SpecVersion;
-
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import software.amazon.lambda.powertools.validation.Validation;
 import software.amazon.lambda.powertools.validation.ValidationConfig;
 import software.amazon.lambda.powertools.validation.ValidationException;
 import software.amazon.lambda.powertools.validation.handlers.GenericSchemaV7APIGatewayProxyRequestEventHandler;
 import software.amazon.lambda.powertools.validation.handlers.GenericSchemaV7StringHandler;
+import software.amazon.lambda.powertools.validation.handlers.KinesisHandlerWithError;
+import software.amazon.lambda.powertools.validation.handlers.SQSHandlerWithError;
 import software.amazon.lambda.powertools.validation.handlers.SQSWithCustomEnvelopeHandler;
 import software.amazon.lambda.powertools.validation.handlers.SQSWithWrongEnvelopeHandler;
+import software.amazon.lambda.powertools.validation.handlers.StandardKinesisHandler;
+import software.amazon.lambda.powertools.validation.handlers.StandardSQSHandler;
 import software.amazon.lambda.powertools.validation.handlers.ValidationInboundAPIGatewayV2HTTPEventHandler;
 import software.amazon.lambda.powertools.validation.model.MyCustomEvent;
 
 
-public class ValidationAspectTest {
+class ValidationAspectTest {
 
     @Mock
     Validation validation;
@@ -167,7 +170,7 @@ public class ValidationAspectTest {
     }
 
     @Test
-    public void testValidateOutboundJsonSchema_APIGWV2() throws Throwable {
+    void testValidateOutboundJsonSchema_APIGWV2() throws Throwable {
         when(validation.schemaVersion()).thenReturn(SpecVersion.VersionFlag.V7);
         when(pjp.getSignature()).thenReturn(signature);
         when(pjp.getSignature().getDeclaringType()).thenReturn(RequestHandler.class);
@@ -187,7 +190,7 @@ public class ValidationAspectTest {
     }
 
     @Test
-    public void validate_inputOK_schemaInClasspath_shouldValidate() {
+    void validate_inputOK_schemaInClasspath_shouldValidate() {
     	GenericSchemaV7APIGatewayProxyRequestEventHandler handler = new GenericSchemaV7APIGatewayProxyRequestEventHandler();
         APIGatewayProxyRequestEvent event = new APIGatewayProxyRequestEvent();
         event.setBody("{" +
@@ -204,7 +207,7 @@ public class ValidationAspectTest {
     }
 
     @Test
-    public void validate_inputKO_schemaInClasspath_shouldThrowValidationException() {
+    void validate_inputKO_schemaInClasspath_shouldThrowValidationException() {
     	GenericSchemaV7APIGatewayProxyRequestEventHandler handler = new GenericSchemaV7APIGatewayProxyRequestEventHandler();
 
         Map<String, String> headers = new HashMap<>();
@@ -232,7 +235,7 @@ public class ValidationAspectTest {
     }
 
     @Test
-    public void validate_inputOK_schemaInString_shouldValidate() {
+    void validate_inputOK_schemaInString_shouldValidate() {
     	ValidationInboundAPIGatewayV2HTTPEventHandler handler = new ValidationInboundAPIGatewayV2HTTPEventHandler();
         APIGatewayV2HTTPEvent event = new APIGatewayV2HTTPEvent();
         event.setBody("{" +
@@ -248,7 +251,7 @@ public class ValidationAspectTest {
 
     
     @Test
-    public void validate_inputKO_schemaInString_shouldThrowValidationException() {
+    void validate_inputKO_schemaInString_shouldThrowValidationException() {
     	ValidationInboundAPIGatewayV2HTTPEventHandler handler = new ValidationInboundAPIGatewayV2HTTPEventHandler();
 
         Map<String, String> headers = new HashMap<>();
@@ -268,49 +271,77 @@ public class ValidationAspectTest {
         assertThat(response.getMultiValueHeaders()).isEmpty();
     }
 
-    @Test
-    public void validate_SQS() {
-        PojoSerializer<SQSEvent> pojoSerializer =
-                LambdaEventSerializers.serializerFor(SQSEvent.class, ClassLoader.getSystemClassLoader());
-        SQSEvent event = pojoSerializer.fromJson(this.getClass().getResourceAsStream("/sqs.json"));
-
-        GenericSchemaV7StringHandler<Object> handler = new GenericSchemaV7StringHandler<>();
-        assertThat(handler.handleRequest(event, context)).isEqualTo("OK");
-    }
-
-    @Test
-    public void validate_SQS_CustomEnvelopeTakePrecedence() {
-        PojoSerializer<SQSEvent> pojoSerializer =
-                LambdaEventSerializers.serializerFor(SQSEvent.class, ClassLoader.getSystemClassLoader());
-        SQSEvent event = pojoSerializer.fromJson(this.getClass().getResourceAsStream("/sqs_message.json"));
-
-        SQSWithCustomEnvelopeHandler handler = new SQSWithCustomEnvelopeHandler();
-        assertThat(handler.handleRequest(event, context)).isEqualTo("OK");
-    }
-
-    @Test
-    public void validate_SQS_WrongEnvelope_shouldThrowValidationException() {
-        PojoSerializer<SQSEvent> pojoSerializer =
-                LambdaEventSerializers.serializerFor(SQSEvent.class, ClassLoader.getSystemClassLoader());
-        SQSEvent event = pojoSerializer.fromJson(this.getClass().getResourceAsStream("/sqs_message.json"));
-
-        SQSWithWrongEnvelopeHandler handler = new SQSWithWrongEnvelopeHandler();
-        assertThatExceptionOfType(ValidationException.class).isThrownBy(() -> handler.handleRequest(event, context));
-    }
-
-    @Test
-    public void validate_Kinesis() {
-        PojoSerializer<KinesisEvent> pojoSerializer =
-                LambdaEventSerializers.serializerFor(KinesisEvent.class, ClassLoader.getSystemClassLoader());
-        KinesisEvent event = pojoSerializer.fromJson(this.getClass().getResourceAsStream("/kinesis.json"));
-
+    @ParameterizedTest
+    @Event(value = "sqs.json", type = SQSEvent.class)
+    void validate_SQS(SQSEvent event) {
         GenericSchemaV7StringHandler<Object> handler = new GenericSchemaV7StringHandler<>();
         assertThat(handler.handleRequest(event, context)).isEqualTo("OK");
     }
 
     @ParameterizedTest
+    @Event(value = "sqs_invalid_messages.json", type = SQSEvent.class)
+    void validate_SQS_with_validation_partial_failure(SQSEvent event) {
+        StandardSQSHandler handler = new StandardSQSHandler();
+        SQSBatchResponse response = handler.handleRequest(event, context);
+        assertThat(response.getBatchItemFailures()).hasSize(2);
+        assertThat(response.getBatchItemFailures().stream().map(SQSBatchResponse.BatchItemFailure::getItemIdentifier).collect(
+                Collectors.toList())).contains("d9144555-9a4f-4ec3-99a0-fc4e625a8db3", "d9144555-9a4f-4ec3-99a0-fc4e625a8db5");
+    }
+
+    @ParameterizedTest
+    @Event(value = "sqs_invalid_messages.json", type = SQSEvent.class)
+    void validate_SQS_with_partial_failure(SQSEvent event) {
+        SQSHandlerWithError handler = new SQSHandlerWithError();
+        SQSBatchResponse response = handler.handleRequest(event, context);
+        assertThat(response.getBatchItemFailures()).hasSize(3);
+        assertThat(response.getBatchItemFailures().stream().map(SQSBatchResponse.BatchItemFailure::getItemIdentifier).collect(
+                Collectors.toList())).contains("d9144555-9a4f-4ec3-99a0-fc4e625a8db3", "d9144555-9a4f-4ec3-99a0-fc4e625a8db5", "1234");
+    }
+
+    @ParameterizedTest
+    @Event(value = "sqs_message.json", type = SQSEvent.class)
+    void validate_SQS_CustomEnvelopeTakePrecedence(SQSEvent event) {
+        SQSWithCustomEnvelopeHandler handler = new SQSWithCustomEnvelopeHandler();
+        assertThat(handler.handleRequest(event, context)).isEqualTo("OK");
+    }
+
+    @ParameterizedTest
+    @Event(value = "sqs_message.json", type = SQSEvent.class)
+    void validate_SQS_WrongEnvelope_shouldThrowValidationException(SQSEvent event) {
+        SQSWithWrongEnvelopeHandler handler = new SQSWithWrongEnvelopeHandler();
+        assertThatExceptionOfType(ValidationException.class).isThrownBy(() -> handler.handleRequest(event, context));
+    }
+
+    @ParameterizedTest
+    @Event(value = "kinesis.json", type = KinesisEvent.class)
+    void validate_Kinesis(KinesisEvent event) {
+        GenericSchemaV7StringHandler<Object> handler = new GenericSchemaV7StringHandler<>();
+        assertThat(handler.handleRequest(event, context)).isEqualTo("OK");
+    }
+
+    @ParameterizedTest
+    @Event(value = "kinesis_invalid_messages.json", type = KinesisEvent.class)
+    void validate_Kinesis_with_validation_partial_failure(KinesisEvent event) {
+        StandardKinesisHandler handler = new StandardKinesisHandler();
+        StreamsEventResponse response = handler.handleRequest(event, context);
+        assertThat(response.getBatchItemFailures()).hasSize(2);
+        assertThat(response.getBatchItemFailures().stream().map(StreamsEventResponse.BatchItemFailure::getItemIdentifier).collect(
+                Collectors.toList())).contains("49545115243490985018280067714973144582180062593244200962", "49545115243490985018280067714973144582180062593244200964");
+    }
+
+    @ParameterizedTest
+    @Event(value = "kinesis_invalid_messages.json", type = KinesisEvent.class)
+    void validate_Kinesis_with_partial_failure(KinesisEvent event) {
+        KinesisHandlerWithError handler = new KinesisHandlerWithError();
+        StreamsEventResponse response = handler.handleRequest(event, context);
+        assertThat(response.getBatchItemFailures()).hasSize(3);
+        assertThat(response.getBatchItemFailures().stream().map(StreamsEventResponse.BatchItemFailure::getItemIdentifier).collect(
+                Collectors.toList())).contains("49545115243490985018280067714973144582180062593244200962", "49545115243490985018280067714973144582180062593244200964", "1234");
+    }
+
+    @ParameterizedTest
     @MethodSource("provideEventAndEventType")
-    public void validateEEvent(String jsonResource, Class eventClass) throws IOException {
+    void validateEEvent(String jsonResource, Class eventClass) throws IOException {
         Object event = ValidationConfig.get().getObjectMapper()
                 .readValue(this.getClass().getResourceAsStream(jsonResource), eventClass);
 

@@ -8,7 +8,7 @@ This utility provides JSON Schema validation for payloads held within events and
 **Key features**
 
 * Validate incoming events and responses
-* Built-in validation for most common events (API Gateway, SNS, SQS, ...)
+* Built-in validation for most common events (API Gateway, SNS, SQS, ...) and support for partial batch failures (SQS, Kinesis)
 * JMESPath support validate only a sub part of the event
 
 ## Install
@@ -92,9 +92,14 @@ The validator is configured to enable format assertions by default even for 2019
 `@Validation` annotation is used to validate either inbound events or functions' response.
 
 It will fail fast if an event or response doesn't conform with given JSON Schema. For most type of events a `ValidationException` will be thrown.
+
 For API gateway events associated with REST APIs and HTTP APIs -  `APIGatewayProxyRequestEvent` and `APIGatewayV2HTTPEvent` - the `@Validation` 
 annotation will build and return a custom 400 / "Bad Request" response, with a body containing the validation errors. This saves you from having
 to catch the validation exception and map it back to a meaningful user error yourself.
+
+For SQS and Kinesis events - `SQSEvent` and `KinesisEvent`- the `@Validation` annotation will add the invalid messages
+to the batch item failures list in the response, respectively `SQSBatchResponse` and `StreamsEventResponse` 
+and removed from the event so that you do not process them within the handler. 
 
 While it is easier to specify a json schema file in the classpath (using the notation `"classpath:/path/to/schema.json"`), you can also provide a JSON String containing the schema.
 
@@ -152,31 +157,31 @@ For the following events and responses, the Validator will automatically perform
 
 ** Events **
 
- Type of event | Class | Path to content |
- ------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------
- API Gateway REST |  APIGatewayProxyRequestEvent |  `body`
- API Gateway HTTP |  APIGatewayV2HTTPEvent | `body`
- Application Load Balancer |  ApplicationLoadBalancerRequestEvent | `body`
- Cloudformation Custom Resource |  CloudFormationCustomResourceEvent | `resourceProperties`
- CloudWatch Logs |  CloudWatchLogsEvent | `awslogs.powertools_base64_gzip(data)`
- EventBridge / Cloudwatch |  ScheduledEvent | `detail`
- Kafka |  KafkaEvent | `records[*][*].value`
- Kinesis |  KinesisEvent | `Records[*].kinesis.powertools_base64(data)`
- Kinesis Firehose |  KinesisFirehoseEvent | `Records[*].powertools_base64(data)`
- Kinesis Analytics from Firehose |  KinesisAnalyticsFirehoseInputPreprocessingEvent | `Records[*].powertools_base64(data)`
- Kinesis Analytics from Streams |  KinesisAnalyticsStreamsInputPreprocessingEvent | `Records[*].powertools_base64(data)`
- SNS |  SNSEvent | `Records[*].Sns.Message`
- SQS |  SQSEvent | `Records[*].body`
+| Type of event                   | Class                                           | Path to content                              |
+|---------------------------------|-------------------------------------------------|----------------------------------------------|
+| API Gateway REST                | APIGatewayProxyRequestEvent                     | `body`                                       |
+| API Gateway HTTP                | APIGatewayV2HTTPEvent                           | `body`                                       |
+| Application Load Balancer       | ApplicationLoadBalancerRequestEvent             | `body`                                       |
+| Cloudformation Custom Resource  | CloudFormationCustomResourceEvent               | `resourceProperties`                         |
+| CloudWatch Logs                 | CloudWatchLogsEvent                             | `awslogs.powertools_base64_gzip(data)`       |
+| EventBridge / Cloudwatch        | ScheduledEvent                                  | `detail`                                     |
+| Kafka                           | KafkaEvent                                      | `records[*][*].value`                        |
+| Kinesis                         | KinesisEvent                                    | `Records[*].kinesis.powertools_base64(data)` |
+| Kinesis Firehose                | KinesisFirehoseEvent                            | `Records[*].powertools_base64(data)`         |
+| Kinesis Analytics from Firehose | KinesisAnalyticsFirehoseInputPreprocessingEvent | `Records[*].powertools_base64(data)`         |
+| Kinesis Analytics from Streams  | KinesisAnalyticsStreamsInputPreprocessingEvent  | `Records[*].powertools_base64(data)`         |
+| SNS                             | SNSEvent                                        | `Records[*].Sns.Message`                     |
+| SQS                             | SQSEvent                                        | `Records[*].body`                            |
 
 ** Responses **
 
- Type of response | Class | Path to content (envelope)
- ------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------
- API Gateway REST | APIGatewayProxyResponseEvent} | `body`
- API Gateway HTTP | APIGatewayV2HTTPResponse} | `body`
- API Gateway WebSocket | APIGatewayV2WebSocketResponse} | `body`
- Load Balancer | ApplicationLoadBalancerResponseEvent} | `body`
- Kinesis Analytics | KinesisAnalyticsInputPreprocessingResponse} | `Records[*].powertools_base64(data)``
+| Type of response      | Class                                       | Path to content (envelope)            |
+|-----------------------|---------------------------------------------|---------------------------------------|
+| API Gateway REST      | APIGatewayProxyResponseEvent}               | `body`                                |
+| API Gateway HTTP      | APIGatewayV2HTTPResponse}                   | `body`                                |
+| API Gateway WebSocket | APIGatewayV2WebSocketResponse}              | `body`                                |
+| Load Balancer         | ApplicationLoadBalancerResponseEvent}       | `body`                                |
+| Kinesis Analytics     | KinesisAnalyticsInputPreprocessingResponse} | `Records[*].powertools_base64(data)`` |
 
 ## Custom events and responses
 
