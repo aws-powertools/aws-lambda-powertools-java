@@ -652,7 +652,7 @@
                         <!-- we run checkstyle only on Java 11, no need to run it for all JDK, it's just code style -->
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.3.0</version>
+                        <version>3.6.0</version>
                         <configuration>
                             <propertyExpansion>basedir=${project.rootdir}</propertyExpansion>
                             <configLocation>checkstyle.xml</configLocation>
