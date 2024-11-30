@@ -580,7 +580,7 @@ You could specify a different provider as long as it extends `BaseProvider` and/
     }
     ```
 
-    In this case ```SecretsProvider``` will be used to retrieve a raw value that is then trasformed into the target Object by using ```JsonTransformer```.
+    In this case ```SecretsProvider``` will be used to retrieve a raw value that is then transformed into the target Object by using ```JsonTransformer```.
     To show the convenience of the annotation compare the following two code snippets.
 
 

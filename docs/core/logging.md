@@ -152,7 +152,7 @@ Powertools for AWS Lambda (Java) extends the functionality of Log4J. Below is an
 
 !!! info "LambdaJsonLayout is now deprecated"
 
-    Configuring utiltiy using `<LambdaJsonLayout/>` plugin is deprecated now. While utility still supports the old configuration, we strongly recommend upgrading the 
+    Configuring utility using `<LambdaJsonLayout/>` plugin is deprecated now. While utility still supports the old configuration, we strongly recommend upgrading the 
     `log4j2.xml` configuration to `JsonTemplateLayout` instead. [JsonTemplateLayout](https://logging.apache.org/log4j/2.x/manual/json-template-layout.html) is recommended way of doing structured logging.
     
     Please follow [this guide](#upgrade-to-jsontemplatelayout-from-deprecated-lambdajsonlayout-configuration-in-log4j2xml) for upgrade steps.
