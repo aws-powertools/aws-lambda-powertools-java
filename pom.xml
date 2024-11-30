@@ -73,7 +73,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <log4j.version>2.22.1</log4j.version>
+        <log4j.version>2.24.0</log4j.version>
         <jackson.version>2.17.2</jackson.version>
         <aws.sdk.version>2.27.7</aws.sdk.version>
         <aws.xray.recorder.version>2.18.1</aws.xray.recorder.version>
