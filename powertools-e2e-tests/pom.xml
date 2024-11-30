@@ -84,7 +84,7 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>amazon-sqs-java-extended-client-lib</artifactId>
-            <version>2.0.4</version>
+            <version>2.1.1</version>
             <scope>test</scope>
         </dependency>
 
