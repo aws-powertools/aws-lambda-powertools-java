@@ -82,7 +82,7 @@
         <lambda.core.version>1.2.3</lambda.core.version>
         <lambda.events.version>3.11.4</lambda.events.version>
         <lambda.serial.version>1.1.5</lambda.serial.version>
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <aspectj.version>1.9.7</aspectj.version>
         <aspectj-maven-plugin.version>1.13.1</aspectj-maven-plugin.version>
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
