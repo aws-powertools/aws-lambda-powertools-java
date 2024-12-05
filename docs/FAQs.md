@@ -142,4 +142,113 @@ The following example shows how to use the Lambda Powertools Parameters module w
     }
     ```
 The `aws-crt-client` was considered for adoption as the default HTTP client in Lambda Powertools for Java as mentioned in [Move SDK http client to CRT](https://github.com/aws-powertools/powertools-lambda-java/issues/1092), 
-but due to the impact on the developer experience it was decided to stick with the `url-connection-client`. 
+but due to the impact on the developer experience it was decided to stick with the `url-connection-client`.
+
+## How can I use Powertools for AWS Lambda (Java) with GraalVM?
+
+Powertools core utilities, i.e. [logging](./core/logging.md), [metrics](./core/metrics.md) and [tracing](./core/tracing.md), include the [GraalVM Reachability Metadata (GRM)](https://www.graalvm.org/latest/reference-manual/native-image/metadata/) in the `META-INF` directories of the respective JARs. You can find a working example of Serverless Application Model (SAM) based application in the [examples](../examples/powertools-examples-core-utilities/sam-graalvm/README.md) directory.
+
+These are typical steps you need to follow in a maven based Java project
+
+### Set the environment to use GraalVM
+
+```shell
+export JAVA_HOME=<path to GraalVM>
+```
+
+### Use log4j > 2.24.0
+Log4j version `2.24.0` adds [support for GraalVM](https://github.com/apache/logging-log4j2/issues/1539#issuecomment-2106766878). Depending on your project's dependency hierarchy, older version of log4j might be included in the final dependency graph. Make sure version `>2.24.0` of these dependencies are used by your maven project:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j2-impl</artifactId>
+        <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-layout-template-json</artifactId>
+        <version>${log4j.version}</version>
+    </dependency>
+</dependencies>
+
+```
+
+### Add the AWS Lambda Java Runtime Interface Client dependency
+
+Runtime Interface Client allow your function to receive invocation events from Lambda, send the response back to Lambda, and report errors to the Lambda service. Add the below dependency to your maven project:
+
+```xml
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-lambda-java-runtime-interface-client</artifactId>
+    <version>2.1.1</version>
+</dependency>
+```
+
+Also include the AWS Lambda GRM files by copying the `com.amazonaws`[directory](../examples/powertools-examples-core-utilities/sam-graalvm/src/main/resources/META-INF/native-image/) in your project's `META-INF/native-image` directory
+
+### Build the native image
+
+1. Use the `native-maven-plugin` to build the native image. You can do this by adding the plugin to your `pom.xml` and creating a build profile called `native-image` that can build the native image of your Lambda function:
+
+```xml
+<profiles>
+    <profile>
+        <id>native-image</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.graalvm.buildtools</groupId>
+                    <artifactId>native-maven-plugin</artifactId>
+                    <version>0.10.1</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <id>build-native</id>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <imageName>your-project-name</imageName>
+                        <mainClass>com.amazonaws.services.lambda.runtime.api.client.AWSLambda</mainClass>
+                        <buildArgs>
+                            <!-- required for AWS Lambda Runtime Interface Client -->
+                            <arg>--enable-url-protocols=http</arg>
+                            <arg>--add-opens java.base/java.util=ALL-UNNAMED</arg>
+                        </buildArgs>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
+```
+
+2. Create a docker image using a Dockerfile like [this](../examples/powertools-examples-core-utilities/sam-graalvm/Dockerfile) to create an x86 based build image.
+
+```shell
+docker build --platform linux/amd64 . -t your-org/your-app-graalvm-builder
+```
+
+3. Create the native image of you Lambda function using the docker command below. 
+
+```shell
+docker run --platform linux/amd64 -it -v `pwd`:`pwd` -w `pwd` -v ~/.m2:/root/.m2 your-org/your-app-graalvm-builder mvn clean -Pnative-image package
+
+```
+The native image is created in the target directory.

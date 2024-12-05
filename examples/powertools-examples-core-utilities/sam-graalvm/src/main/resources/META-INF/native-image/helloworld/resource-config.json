@@ -1,0 +1,7 @@
+{
+  "resources":{
+  "includes":[{
+    "pattern":"\\Qlog4j2.xml\\E"
+  }]},
+  "bundles":[]
+}

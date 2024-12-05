@@ -1,0 +1,679 @@
+[
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.Deserializers;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.KeyDeserializers;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.ValueInstantiators;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ser.Serializers;"
+},
+{
+  "name":"[Lsoftware.amazon.lambda.powertools.logging.model.Product;"
+},
+{
+  "name":"com.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ext.Java7HandlersImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.Context",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"getAwsRequestId","parameterTypes":[] }, {"name":"getClientContext","parameterTypes":[] }, {"name":"getFunctionName","parameterTypes":[] }, {"name":"getFunctionVersion","parameterTypes":[] }, {"name":"getIdentity","parameterTypes":[] }, {"name":"getInvokedFunctionArn","parameterTypes":[] }, {"name":"getLogGroupName","parameterTypes":[] }, {"name":"getLogStreamName","parameterTypes":[] }, {"name":"getLogger","parameterTypes":[] }, {"name":"getMemoryLimitInMB","parameterTypes":[] }, {"name":"getRemainingTimeInMillis","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.RequestHandler",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.RequestStreamHandler",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getBody","parameterTypes":[] }, {"name":"getHeaders","parameterTypes":[] }, {"name":"getHttpMethod","parameterTypes":[] }, {"name":"getIsBase64Encoded","parameterTypes":[] }, {"name":"getMultiValueHeaders","parameterTypes":[] }, {"name":"getMultiValueQueryStringParameters","parameterTypes":[] }, {"name":"getPath","parameterTypes":[] }, {"name":"getPathParameters","parameterTypes":[] }, {"name":"getQueryStringParameters","parameterTypes":[] }, {"name":"getRequestContext","parameterTypes":[] }, {"name":"getResource","parameterTypes":[] }, {"name":"getStageVariables","parameterTypes":[] }, {"name":"getVersion","parameterTypes":[] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setIsBase64Encoded","parameterTypes":["java.lang.Boolean"] }, {"name":"setMultiValueHeaders","parameterTypes":["java.util.Map"] }, {"name":"setMultiValueQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setPathParameters","parameterTypes":["java.util.Map"] }, {"name":"setQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$ProxyRequestContext"] }, {"name":"setResource","parameterTypes":["java.lang.String"] }, {"name":"setStageVariables","parameterTypes":["java.util.Map"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$ProxyRequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getAccountId","parameterTypes":[] }, {"name":"getApiId","parameterTypes":[] }, {"name":"getAuthorizer","parameterTypes":[] }, {"name":"getDomainName","parameterTypes":[] }, {"name":"getDomainPrefix","parameterTypes":[] }, {"name":"getExtendedRequestId","parameterTypes":[] }, {"name":"getHttpMethod","parameterTypes":[] }, {"name":"getIdentity","parameterTypes":[] }, {"name":"getOperationName","parameterTypes":[] }, {"name":"getPath","parameterTypes":[] }, {"name":"getProtocol","parameterTypes":[] }, {"name":"getRequestId","parameterTypes":[] }, {"name":"getRequestTime","parameterTypes":[] }, {"name":"getRequestTimeEpoch","parameterTypes":[] }, {"name":"getResourceId","parameterTypes":[] }, {"name":"getResourcePath","parameterTypes":[] }, {"name":"getStage","parameterTypes":[] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setRequestId","parameterTypes":["java.lang.String"] }, {"name":"setResourcePath","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$RequestIdentity",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getBody","parameterTypes":[] }, {"name":"getCookies","parameterTypes":[] }, {"name":"getHeaders","parameterTypes":[] }, {"name":"getIsBase64Encoded","parameterTypes":[] }, {"name":"getPathParameters","parameterTypes":[] }, {"name":"getQueryStringParameters","parameterTypes":[] }, {"name":"getRawPath","parameterTypes":[] }, {"name":"getRawQueryString","parameterTypes":[] }, {"name":"getRequestContext","parameterTypes":[] }, {"name":"getRouteKey","parameterTypes":[] }, {"name":"getStageVariables","parameterTypes":[] }, {"name":"getVersion","parameterTypes":[] }, {"name":"setCookies","parameterTypes":["java.util.List"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setIsBase64Encoded","parameterTypes":["boolean"] }, {"name":"setRawPath","parameterTypes":["java.lang.String"] }, {"name":"setRawQueryString","parameterTypes":["java.lang.String"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext"] }, {"name":"setRouteKey","parameterTypes":["java.lang.String"] }, {"name":"setVersion","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getAccountId","parameterTypes":[] }, {"name":"getApiId","parameterTypes":[] }, {"name":"getAuthorizer","parameterTypes":[] }, {"name":"getDomainName","parameterTypes":[] }, {"name":"getDomainPrefix","parameterTypes":[] }, {"name":"getHttp","parameterTypes":[] }, {"name":"getRequestId","parameterTypes":[] }, {"name":"getRouteKey","parameterTypes":[] }, {"name":"getStage","parameterTypes":[] }, {"name":"getTime","parameterTypes":[] }, {"name":"getTimeEpoch","parameterTypes":[] }, {"name":"setAccountId","parameterTypes":["java.lang.String"] }, {"name":"setApiId","parameterTypes":["java.lang.String"] }, {"name":"setDomainName","parameterTypes":["java.lang.String"] }, {"name":"setDomainPrefix","parameterTypes":["java.lang.String"] }, {"name":"setHttp","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Http"] }, {"name":"setRequestId","parameterTypes":["java.lang.String"] }, {"name":"setRouteKey","parameterTypes":["java.lang.String"] }, {"name":"setStage","parameterTypes":["java.lang.String"] }, {"name":"setTime","parameterTypes":["java.lang.String"] }, {"name":"setTimeEpoch","parameterTypes":["long"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Authorizer",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Authorizer$JWT",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$CognitoIdentity",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Http",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getMethod","parameterTypes":[] }, {"name":"getPath","parameterTypes":[] }, {"name":"getProtocol","parameterTypes":[] }, {"name":"getSourceIp","parameterTypes":[] }, {"name":"getUserAgent","parameterTypes":[] }, {"name":"setMethod","parameterTypes":["java.lang.String"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setProtocol","parameterTypes":["java.lang.String"] }, {"name":"setSourceIp","parameterTypes":["java.lang.String"] }, {"name":"setUserAgent","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$IAM",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getBody","parameterTypes":[] }, {"name":"getHeaders","parameterTypes":[] }, {"name":"getHttpMethod","parameterTypes":[] }, {"name":"getIsBase64Encoded","parameterTypes":[] }, {"name":"getMultiValueHeaders","parameterTypes":[] }, {"name":"getMultiValueQueryStringParameters","parameterTypes":[] }, {"name":"getPath","parameterTypes":[] }, {"name":"getQueryStringParameters","parameterTypes":[] }, {"name":"getRequestContext","parameterTypes":[] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setIsBase64Encoded","parameterTypes":["boolean"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$RequestContext"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$Elb",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getTargetGroupArn","parameterTypes":[] }, {"name":"setTargetGroupArn","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$RequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getElb","parameterTypes":[] }, {"name":"setElb","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$Elb"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.tests.EventArgumentsProvider",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.tests.annotations.Event",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.tools.attach.VirtualMachine"
+},
+{
+  "name":"double",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.io.IOException"
+},
+{
+  "name":"java.io.InputStream"
+},
+{
+  "name":"java.io.OutputStream"
+},
+{
+  "name":"java.io.Serializable",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"java.lang.Boolean"
+},
+{
+  "name":"java.lang.Class",
+  "methods":[{"name":"forName","parameterTypes":["java.lang.String"] }, {"name":"getAnnotatedInterfaces","parameterTypes":[] }, {"name":"getAnnotatedSuperclass","parameterTypes":[] }, {"name":"getDeclaredMethod","parameterTypes":["java.lang.String","java.lang.Class[]"] }, {"name":"getMethod","parameterTypes":["java.lang.String","java.lang.Class[]"] }, {"name":"getModule","parameterTypes":[] }, {"name":"getNestHost","parameterTypes":[] }, {"name":"getNestMembers","parameterTypes":[] }, {"name":"getPermittedSubclasses","parameterTypes":[] }, {"name":"getRecordComponents","parameterTypes":[] }, {"name":"isNestmateOf","parameterTypes":["java.lang.Class"] }, {"name":"isRecord","parameterTypes":[] }, {"name":"isSealed","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.ClassLoader",
+  "methods":[{"name":"getDefinedPackage","parameterTypes":["java.lang.String"] }, {"name":"getUnnamedModule","parameterTypes":[] }, {"name":"registerAsParallelCapable","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.Cloneable",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.Comparable",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.lang.Enum",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.lang.Module",
+  "methods":[{"name":"addExports","parameterTypes":["java.lang.String","java.lang.Module"] }, {"name":"addReads","parameterTypes":["java.lang.Module"] }, {"name":"canRead","parameterTypes":["java.lang.Module"] }, {"name":"getClassLoader","parameterTypes":[] }, {"name":"getName","parameterTypes":[] }, {"name":"getPackages","parameterTypes":[] }, {"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }, {"name":"isExported","parameterTypes":["java.lang.String"] }, {"name":"isExported","parameterTypes":["java.lang.String","java.lang.Module"] }, {"name":"isNamed","parameterTypes":[] }, {"name":"isOpen","parameterTypes":["java.lang.String","java.lang.Module"] }]
+},
+{
+  "name":"java.lang.Object",
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"clone","parameterTypes":[] }, {"name":"getClass","parameterTypes":[] }, {"name":"toString","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.ProcessHandle",
+  "methods":[{"name":"current","parameterTypes":[] }, {"name":"pid","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.Runtime",
+  "methods":[{"name":"version","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.Runtime$Version",
+  "methods":[{"name":"feature","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.StackWalker"
+},
+{
+  "name":"java.lang.System",
+  "methods":[{"name":"getSecurityManager","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.annotation.Retention",
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"java.lang.annotation.Target",
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"java.lang.constant.Constable",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.lang.invoke.MethodHandle",
+  "methods":[{"name":"bindTo","parameterTypes":["java.lang.Object"] }, {"name":"invokeWithArguments","parameterTypes":["java.lang.Object[]"] }]
+},
+{
+  "name":"java.lang.invoke.MethodHandles",
+  "methods":[{"name":"lookup","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.invoke.MethodHandles$Lookup",
+  "methods":[{"name":"findVirtual","parameterTypes":["java.lang.Class","java.lang.String","java.lang.invoke.MethodType"] }]
+},
+{
+  "name":"java.lang.invoke.MethodType",
+  "methods":[{"name":"methodType","parameterTypes":["java.lang.Class","java.lang.Class[]"] }]
+},
+{
+  "name":"java.lang.reflect.AccessibleObject",
+  "methods":[{"name":"setAccessible","parameterTypes":["boolean"] }]
+},
+{
+  "name":"java.lang.reflect.AnnotatedArrayType",
+  "methods":[{"name":"getAnnotatedGenericComponentType","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.reflect.AnnotatedType",
+  "methods":[{"name":"getType","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.reflect.Executable",
+  "methods":[{"name":"getAnnotatedExceptionTypes","parameterTypes":[] }, {"name":"getAnnotatedParameterTypes","parameterTypes":[] }, {"name":"getAnnotatedReceiverType","parameterTypes":[] }, {"name":"getParameterCount","parameterTypes":[] }, {"name":"getParameters","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.reflect.Method",
+  "methods":[{"name":"getAnnotatedReturnType","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.reflect.Parameter",
+  "methods":[{"name":"getModifiers","parameterTypes":[] }, {"name":"getName","parameterTypes":[] }, {"name":"isNamePresent","parameterTypes":[] }]
+},
+{
+  "name":"java.security.AccessController",
+  "methods":[{"name":"doPrivileged","parameterTypes":["java.security.PrivilegedAction"] }, {"name":"doPrivileged","parameterTypes":["java.security.PrivilegedExceptionAction"] }]
+},
+{
+  "name":"java.util.Map"
+},
+{
+  "name":"java.util.concurrent.ForkJoinTask",
+  "fields":[{"name":"aux"}, {"name":"status"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicBoolean",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.function.Consumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"jdk.internal.misc.Unsafe"
+},
+{
+  "name":"kotlin.jvm.JvmInline"
+},
+{
+  "name":"org.apiguardian.api.API",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.aspectj.runtime.internal.AroundClosure",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.joda.time.DateTime"
+},
+{
+  "name":"org.slf4j.ILoggerFactory",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.Logger",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.helpers.AbstractLogger",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.helpers.LegacyAbstractLogger",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.spi.SLF4JServiceProvider",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.OutputChoice",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.OutputChoice$OutputChoiceType",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.TestLogger",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.TestLoggerConfiguration",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.TestLoggerFactory",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.slf4j.test.TestServiceProvider",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.common.internal.LambdaHandlerProcessor",
+  "fields":[{"name":"IS_COLD_START"}, {"name":"SERVICE_NAME"}]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.argument.StructuredArgumentsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"arrayArgument","parameterTypes":[] }, {"name":"jsonArgument","parameterTypes":[] }, {"name":"keyValueArgument","parameterTypes":[] }, {"name":"mapArgument","parameterTypes":[] }, {"name":"setUp","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogAlbCorrelationId",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogAlbCorrelationId$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogApiGatewayHttpApiCorrelationId",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogApiGatewayHttpApiCorrelationId$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogApiGatewayRestApiCorrelationId",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogApiGatewayRestApiCorrelationId$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogAppSyncCorrelationId",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.io.InputStream","java.io.OutputStream","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogAppSyncCorrelationId$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogClearState",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.util.Map","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogClearState$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogDisabled",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogDisabledForStream",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEnabled",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"anotherMethod","parameterTypes":[] }, {"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEnabled$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEnabled$AjcClosure3",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEnabledForStream",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.io.InputStream","java.io.OutputStream","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEnabledForStream$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogError",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogError$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEvent",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEvent$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventBridgeCorrelationId",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.io.InputStream","java.io.OutputStream","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventBridgeCorrelationId$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventEnvVar",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventEnvVar$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventForStream",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.io.InputStream","java.io.OutputStream","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogEventForStream$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogResponse",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogResponse$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogResponseForStream",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.io.InputStream","java.io.OutputStream","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogResponseForStream$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogSamplingDisabled",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogSamplingDisabled$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogSamplingEnabled",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"handleRequest","parameterTypes":["java.lang.Object","com.amazonaws.services.lambda.runtime.Context"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.handlers.PowertoolsLogSamplingEnabled$AjcClosure1",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.JsonSerializerTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setUp","parameterTypes":[] }, {"name":"writeBigDecimal_shouldWriteBigDecimal","parameterTypes":[] }, {"name":"writeBoolean_shouldWriteBooleanValue","parameterTypes":[] }, {"name":"writeCustomObject_shouldWriteObjectAsJson","parameterTypes":[] }, {"name":"writeDouble_shouldWriteDoubleValue","parameterTypes":[] }, {"name":"writeFloat_shouldWriteFloatValue","parameterTypes":[] }, {"name":"writeInt_shouldWriteIntValue","parameterTypes":[] }, {"name":"writeJsonNodeObject_shouldWriteObjectAsJson","parameterTypes":[] }, {"name":"writeListObject_shouldWriteListAsArray","parameterTypes":[] }, {"name":"writeLong_shouldWriteLongValue","parameterTypes":[] }, {"name":"writeMapObject_shouldWriteMapAsJson","parameterTypes":[] }, {"name":"writeNull_shouldWriteNullValue","parameterTypes":[] }, {"name":"writeStringObject_shouldWriteStringWithQuotes","parameterTypes":[] }, {"name":"writeString_shouldWriteStringWithQuotes","parameterTypes":[] }, {"name":"writeTreeNodeArrayObject_shouldWriteObjectAsJson","parameterTypes":[] }, {"name":"writeTreeNodeObject_shouldWriteObjectAsJson","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.LambdaLoggingAspect",
+  "fields":[{"name":"LEVEL_AT_INITIALISATION"}],
+  "methods":[{"name":"setLogLevels","parameterTypes":["org.slf4j.event.Level"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.LambdaLoggingAspectTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"cleanUp","parameterTypes":[] }, {"name":"setUp","parameterTypes":[] }, {"name":"shouldClearStateWhenClearStateIsTrue","parameterTypes":[] }, {"name":"shouldHaveNoEffectIfNotUsedOnLambdaHandler","parameterTypes":[] }, {"name":"shouldLogCorrelationIdOnALBEvent","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent"] }, {"name":"shouldLogCorrelationIdOnAPIGatewayProxyRequestEvent","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent"] }, {"name":"shouldLogCorrelationIdOnAPIGatewayV2HTTPEvent","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent"] }, {"name":"shouldLogCorrelationIdOnAppSyncEvent","parameterTypes":[] }, {"name":"shouldLogCorrelationIdOnStreamHandler","parameterTypes":[] }, {"name":"shouldLogDebugWhenPowertoolsLevelEnvVarIsDebug","parameterTypes":[] }, {"name":"shouldLogDebugWhenSamplingEnvVarEqualsOne","parameterTypes":[] }, {"name":"shouldLogDebugWhenSamplingEqualsOne","parameterTypes":[] }, {"name":"shouldLogErrorForHandlerWhenEnvVariableSetToTrue","parameterTypes":[] }, {"name":"shouldLogErrorForHandlerWithLogErrorAnnotation","parameterTypes":[] }, {"name":"shouldLogErrorWhenPowertoolsLevelEnvVarIsError","parameterTypes":[] }, {"name":"shouldLogErrorWhenPowertoolsLevelEnvVarIsFatal","parameterTypes":[] }, {"name":"shouldLogEventForHandlerWhenEnvVariableSetToTrue","parameterTypes":[] }, {"name":"shouldLogEventForHandlerWithLogEventAnnotation","parameterTypes":[] }, {"name":"shouldLogEventForStreamHandler","parameterTypes":[] }, {"name":"shouldLogInfoWhenPowertoolsLevelEnvVarIsInfo","parameterTypes":[] }, {"name":"shouldLogInfoWhenPowertoolsLevelEnvVarIsInfoAndLambdaLevelVarIsWarn","parameterTypes":[] }, {"name":"shouldLogInfoWhenPowertoolsLevelEnvVarIsInvalid","parameterTypes":[] }, {"name":"shouldLogResponseForHandlerWhenEnvVariableSetToTrue","parameterTypes":[] }, {"name":"shouldLogResponseForHandlerWithLogResponseAnnotation","parameterTypes":[] }, {"name":"shouldLogResponseForStreamHandler","parameterTypes":[] }, {"name":"shouldLogServiceNameWhenEnvVarSet","parameterTypes":[] }, {"name":"shouldLogWarnWhenPowertoolsLevelEnvVarINotSetAndLambdaLevelVarIsWarn","parameterTypes":[] }, {"name":"shouldLogWarnWhenPowertoolsLevelEnvVarIsWarn","parameterTypes":[] }, {"name":"shouldLogWarnWhenPowertoolsLevelEnvVarIsWarnAndLambdaLevelVarIsInfo","parameterTypes":[] }, {"name":"shouldNotLogDebugWhenSamplingEnvVarIsInvalid","parameterTypes":[] }, {"name":"shouldNotLogDebugWhenSamplingEnvVarIsTooBig","parameterTypes":[] }, {"name":"shouldNotLogDebugWhenSamplingEqualsZero","parameterTypes":[] }, {"name":"shouldNotLogEventForHandlerWhenEnvVariableSetToFalse","parameterTypes":[] }, {"name":"shouldNotSetLambdaContextForStreamHandlerWhenDisabled","parameterTypes":[] }, {"name":"shouldNotSetLambdaContextWhenDisabled","parameterTypes":[] }, {"name":"shouldSetColdStartFlagOnFirstCallNotOnSecondCall","parameterTypes":[] }, {"name":"shouldSetLambdaContextForStreamHandlerWhenEnabled","parameterTypes":[] }, {"name":"shouldSetLambdaContextWhenEnabled","parameterTypes":[] }, {"name":"testMultipleLoggingManagers_shouldWarnAndSelectFirstOne","parameterTypes":[] }, {"name":"testNoLoggingManagers_shouldWarnAndCreateDefault","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.LoggingConstants",
+  "fields":[{"name":"LAMBDA_LOG_LEVEL"}, {"name":"POWERTOOLS_LOG_EVENT"}, {"name":"POWERTOOLS_LOG_LEVEL"}, {"name":"POWERTOOLS_SAMPLING_RATE"}]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.LoggingManager",
+  "allDeclaredClasses":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.internal.TestLoggingManager",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.model.Basket",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"getProducts","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.logging.model.Product",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"getId","parameterTypes":[] }, {"name":"getName","parameterTypes":[] }, {"name":"getPrice","parameterTypes":[] }]
+},
+{
+  "name":"sun.reflect.ReflectionFactory",
+  "methods":[{"name":"getReflectionFactory","parameterTypes":[] }, {"name":"newConstructorForSerialization","parameterTypes":["java.lang.Class","java.lang.reflect.Constructor"] }]
+}
+]

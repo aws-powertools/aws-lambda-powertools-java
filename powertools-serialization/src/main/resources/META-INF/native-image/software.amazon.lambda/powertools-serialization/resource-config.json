@@ -1,0 +1,85 @@
+{
+  "resources":{
+  "includes":[{
+    "pattern":"\\QMETA-INF/services/java.lang.System$LoggerFinder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.apache.maven.surefire.spi.MasterProcessChannelProcessorFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.assertj.core.configuration.Configuration\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.assertj.core.presentation.Representation\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.engine.TestEngine\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.LauncherDiscoveryListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.LauncherSessionListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.PostDiscoveryFilter\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.junit.platform.launcher.TestExecutionListener\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.slf4j.spi.SLF4JServiceProvider\\E"
+  }, {
+    "pattern":"\\Qalb_event.json\\E"
+  }, {
+    "pattern":"\\Qamq_event.json\\E"
+  }, {
+    "pattern":"\\Qapigw_event.json\\E"
+  }, {
+    "pattern":"\\Qapigw_event_no_body.json\\E"
+  }, {
+    "pattern":"\\Qapigwv2_event.json\\E"
+  }, {
+    "pattern":"\\Qcfcr_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/lambda/thirdparty/org/joda/time/tz/data/Europe/Berlin\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/lambda/thirdparty/org/joda/time/tz/data/ZoneInfoMap\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/alb_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/amq_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/apigw_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/apigw_event_no_body.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/apigwv2_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/cfcr_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/custom_event_map.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/cwl_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/kafip_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/kafka_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/kasip_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/kf_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/kinesis_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/rabbitmq_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/scheduled_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/sns_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/sqs_event.json\\E"
+  }, {
+    "pattern":"\\Qcom/amazonaws/services/lambda/runtime/serialization/factories/sqs_event_no_body.json\\E"
+  }, {
+    "pattern":"\\Qorg/joda/time/tz/data/Europe/Berlin\\E"
+  }, {
+    "pattern":"\\Qorg/joda/time/tz/data/ZoneInfoMap\\E"
+  }, {
+    "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
+  }]},
+  "bundles":[]
+}

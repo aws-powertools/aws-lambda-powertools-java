@@ -1,0 +1,470 @@
+[
+{
+  "name":"[B"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.Deserializers;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.KeyDeserializers;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.deser.ValueInstantiators;"
+},
+{
+  "name":"[Lcom.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ser.Serializers;"
+},
+{
+  "name":"com.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ext.Java7HandlersImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.lambda.thirdparty.com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setIsBase64Encoded","parameterTypes":["java.lang.Boolean"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setPathParameters","parameterTypes":["java.util.Map"] }, {"name":"setQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$ProxyRequestContext"] }, {"name":"setResource","parameterTypes":["java.lang.String"] }, {"name":"setStageVariables","parameterTypes":["java.util.Map"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$ProxyRequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAccountId","parameterTypes":["java.lang.String"] }, {"name":"setApiId","parameterTypes":["java.lang.String"] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setIdentity","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$RequestIdentity"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setProtocol","parameterTypes":["java.lang.String"] }, {"name":"setRequestId","parameterTypes":["java.lang.String"] }, {"name":"setRequestTime","parameterTypes":["java.lang.String"] }, {"name":"setRequestTimeEpoch","parameterTypes":["java.lang.Long"] }, {"name":"setResourceId","parameterTypes":["java.lang.String"] }, {"name":"setResourcePath","parameterTypes":["java.lang.String"] }, {"name":"setStage","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent$RequestIdentity",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAccessKey","parameterTypes":["java.lang.String"] }, {"name":"setAccountId","parameterTypes":["java.lang.String"] }, {"name":"setCaller","parameterTypes":["java.lang.String"] }, {"name":"setCognitoAuthenticationProvider","parameterTypes":["java.lang.String"] }, {"name":"setCognitoAuthenticationType","parameterTypes":["java.lang.String"] }, {"name":"setCognitoIdentityId","parameterTypes":["java.lang.String"] }, {"name":"setCognitoIdentityPoolId","parameterTypes":["java.lang.String"] }, {"name":"setSourceIp","parameterTypes":["java.lang.String"] }, {"name":"setUser","parameterTypes":["java.lang.String"] }, {"name":"setUserAgent","parameterTypes":["java.lang.String"] }, {"name":"setUserArn","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setCookies","parameterTypes":["java.util.List"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setIsBase64Encoded","parameterTypes":["boolean"] }, {"name":"setPathParameters","parameterTypes":["java.util.Map"] }, {"name":"setQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setRawPath","parameterTypes":["java.lang.String"] }, {"name":"setRawQueryString","parameterTypes":["java.lang.String"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext"] }, {"name":"setRouteKey","parameterTypes":["java.lang.String"] }, {"name":"setStageVariables","parameterTypes":["java.util.Map"] }, {"name":"setVersion","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAccountId","parameterTypes":["java.lang.String"] }, {"name":"setApiId","parameterTypes":["java.lang.String"] }, {"name":"setDomainName","parameterTypes":["java.lang.String"] }, {"name":"setDomainPrefix","parameterTypes":["java.lang.String"] }, {"name":"setHttp","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Http"] }, {"name":"setRouteKey","parameterTypes":["java.lang.String"] }, {"name":"setStage","parameterTypes":["java.lang.String"] }, {"name":"setTime","parameterTypes":["java.lang.String"] }, {"name":"setTimeEpoch","parameterTypes":["long"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Authorizer",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Authorizer$JWT",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$CognitoIdentity",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$Http",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setMethod","parameterTypes":["java.lang.String"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setProtocol","parameterTypes":["java.lang.String"] }, {"name":"setSourceIp","parameterTypes":["java.lang.String"] }, {"name":"setUserAgent","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent$RequestContext$IAM",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ActiveMQEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSourceArn","parameterTypes":["java.lang.String"] }, {"name":"setMessages","parameterTypes":["java.util.List"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ActiveMQEvent$ActiveMQMessage",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBrokerInTime","parameterTypes":["long"] }, {"name":"setBrokerOutTime","parameterTypes":["long"] }, {"name":"setData","parameterTypes":["java.lang.String"] }, {"name":"setDeliveryMode","parameterTypes":["int"] }, {"name":"setDestination","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ActiveMQEvent$Destination"] }, {"name":"setExpiration","parameterTypes":["long"] }, {"name":"setMessageID","parameterTypes":["java.lang.String"] }, {"name":"setMessageType","parameterTypes":["java.lang.String"] }, {"name":"setPriority","parameterTypes":["int"] }, {"name":"setProperties","parameterTypes":["java.util.Map"] }, {"name":"setRedelivered","parameterTypes":["boolean"] }, {"name":"setReplyTo","parameterTypes":["java.lang.String"] }, {"name":"setTimestamp","parameterTypes":["long"] }, {"name":"setType","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ActiveMQEvent$Destination",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setPhysicalName","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setHttpMethod","parameterTypes":["java.lang.String"] }, {"name":"setIsBase64Encoded","parameterTypes":["boolean"] }, {"name":"setPath","parameterTypes":["java.lang.String"] }, {"name":"setQueryStringParameters","parameterTypes":["java.util.Map"] }, {"name":"setRequestContext","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$RequestContext"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$Elb",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setTargetGroupArn","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$RequestContext",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setElb","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent$Elb"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.CloudFormationCustomResourceEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setLogicalResourceId","parameterTypes":["java.lang.String"] }, {"name":"setOldResourceProperties","parameterTypes":["java.util.Map"] }, {"name":"setRequestId","parameterTypes":["java.lang.String"] }, {"name":"setRequestType","parameterTypes":["java.lang.String"] }, {"name":"setResourceProperties","parameterTypes":["java.util.Map"] }, {"name":"setResourceType","parameterTypes":["java.lang.String"] }, {"name":"setServiceToken","parameterTypes":["java.lang.String"] }, {"name":"setStackId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.CloudWatchLogsEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAwsLogs","parameterTypes":["com.amazonaws.services.lambda.runtime.events.CloudWatchLogsEvent$AWSLogs"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.CloudWatchLogsEvent$AWSLogs",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setData","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KafkaEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBootstrapServers","parameterTypes":["java.lang.String"] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSourceArn","parameterTypes":["java.lang.String"] }, {"name":"setRecords","parameterTypes":["java.util.Map"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KafkaEvent$KafkaEventRecord",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setOffset","parameterTypes":["long"] }, {"name":"setPartition","parameterTypes":["int"] }, {"name":"setTimestamp","parameterTypes":["long"] }, {"name":"setTimestampType","parameterTypes":["java.lang.String"] }, {"name":"setTopic","parameterTypes":["java.lang.String"] }, {"name":"setValue","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsFirehoseInputPreprocessingEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setApplicationArn","parameterTypes":["java.lang.String"] }, {"name":"setInvocationId","parameterTypes":["java.lang.String"] }, {"name":"setRecords","parameterTypes":["java.util.List"] }, {"name":"setStreamArn","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsFirehoseInputPreprocessingEvent$Record",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setData","parameterTypes":["java.nio.ByteBuffer"] }, {"name":"setKinesisFirehoseRecordMetadata","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsFirehoseInputPreprocessingEvent$Record$KinesisFirehoseRecordMetadata"] }, {"name":"setRecordId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsFirehoseInputPreprocessingEvent$Record$KinesisFirehoseRecordMetadata",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setApproximateArrivalTimestamp","parameterTypes":["java.lang.Long"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsStreamsInputPreprocessingEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setApplicationArn","parameterTypes":["java.lang.String"] }, {"name":"setInvocationId","parameterTypes":["java.lang.String"] }, {"name":"setRecords","parameterTypes":["java.util.List"] }, {"name":"setStreamArn","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsStreamsInputPreprocessingEvent$Record",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setData","parameterTypes":["java.nio.ByteBuffer"] }, {"name":"setKinesisStreamRecordMetadata","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsStreamsInputPreprocessingEvent$Record$KinesisStreamRecordMetadata"] }, {"name":"setRecordId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsStreamsInputPreprocessingEvent$Record$KinesisStreamRecordMetadata",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setApproximateArrivalTimestamp","parameterTypes":["java.lang.Long"] }, {"name":"setPartitionKey","parameterTypes":["java.lang.String"] }, {"name":"setSequenceNumber","parameterTypes":["java.lang.String"] }, {"name":"setShardId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setRecords","parameterTypes":["java.util.List"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisEvent$KinesisEventRecord",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAwsRegion","parameterTypes":["java.lang.String"] }, {"name":"setEventID","parameterTypes":["java.lang.String"] }, {"name":"setEventName","parameterTypes":["java.lang.String"] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSourceARN","parameterTypes":["java.lang.String"] }, {"name":"setEventVersion","parameterTypes":["java.lang.String"] }, {"name":"setInvokeIdentityArn","parameterTypes":["java.lang.String"] }, {"name":"setKinesis","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisEvent$Record"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisEvent$Record",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setKinesisSchemaVersion","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisFirehoseEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setDeliveryStreamArn","parameterTypes":["java.lang.String"] }, {"name":"setInvocationId","parameterTypes":["java.lang.String"] }, {"name":"setRecords","parameterTypes":["java.util.List"] }, {"name":"setRegion","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.KinesisFirehoseEvent$Record",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setApproximateArrivalTimestamp","parameterTypes":["java.lang.Long"] }, {"name":"setData","parameterTypes":["java.nio.ByteBuffer"] }, {"name":"setRecordId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.RabbitMQEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSourceArn","parameterTypes":["java.lang.String"] }, {"name":"setRmqMessagesByQueue","parameterTypes":["java.util.Map"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.RabbitMQEvent$BasicProperties",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAppId","parameterTypes":["java.lang.String"] }, {"name":"setBodySize","parameterTypes":["int"] }, {"name":"setClusterId","parameterTypes":["java.lang.String"] }, {"name":"setContentEncoding","parameterTypes":["java.lang.String"] }, {"name":"setContentType","parameterTypes":["java.lang.String"] }, {"name":"setCorrelationId","parameterTypes":["java.lang.String"] }, {"name":"setDeliveryMode","parameterTypes":["int"] }, {"name":"setExpiration","parameterTypes":["int"] }, {"name":"setHeaders","parameterTypes":["java.util.Map"] }, {"name":"setMessageId","parameterTypes":["java.lang.String"] }, {"name":"setPriority","parameterTypes":["int"] }, {"name":"setReplyTo","parameterTypes":["java.lang.String"] }, {"name":"setTimestamp","parameterTypes":["java.lang.String"] }, {"name":"setType","parameterTypes":["java.lang.String"] }, {"name":"setUserId","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.RabbitMQEvent$RabbitMessage",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setBasicProperties","parameterTypes":["com.amazonaws.services.lambda.runtime.events.RabbitMQEvent$BasicProperties"] }, {"name":"setData","parameterTypes":["java.lang.String"] }, {"name":"setRedelivered","parameterTypes":["boolean"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SNSEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setRecords","parameterTypes":["java.util.List"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SNSEvent$MessageAttribute",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setType","parameterTypes":["java.lang.String"] }, {"name":"setValue","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SNSEvent$SNS",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setMessage","parameterTypes":["java.lang.String"] }, {"name":"setMessageAttributes","parameterTypes":["java.util.Map"] }, {"name":"setMessageId","parameterTypes":["java.lang.String"] }, {"name":"setSignature","parameterTypes":["java.lang.String"] }, {"name":"setSignatureVersion","parameterTypes":["java.lang.String"] }, {"name":"setSigningCertUrl","parameterTypes":["java.lang.String"] }, {"name":"setSubject","parameterTypes":["java.lang.String"] }, {"name":"setTimestamp","parameterTypes":["org.joda.time.DateTime"] }, {"name":"setTopicArn","parameterTypes":["java.lang.String"] }, {"name":"setType","parameterTypes":["java.lang.String"] }, {"name":"setUnsubscribeUrl","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SNSEvent$SNSRecord",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSubscriptionArn","parameterTypes":["java.lang.String"] }, {"name":"setEventVersion","parameterTypes":["java.lang.String"] }, {"name":"setSns","parameterTypes":["com.amazonaws.services.lambda.runtime.events.SNSEvent$SNS"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SQSEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setRecords","parameterTypes":["java.util.List"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SQSEvent$MessageAttribute",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.SQSEvent$SQSMessage",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAttributes","parameterTypes":["java.util.Map"] }, {"name":"setAwsRegion","parameterTypes":["java.lang.String"] }, {"name":"setBody","parameterTypes":["java.lang.String"] }, {"name":"setEventSource","parameterTypes":["java.lang.String"] }, {"name":"setEventSourceArn","parameterTypes":["java.lang.String"] }, {"name":"setMd5OfBody","parameterTypes":["java.lang.String"] }, {"name":"setMessageAttributes","parameterTypes":["java.util.Map"] }, {"name":"setMessageId","parameterTypes":["java.lang.String"] }, {"name":"setReceiptHandle","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.ScheduledEvent",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setAccount","parameterTypes":["java.lang.String"] }, {"name":"setDetail","parameterTypes":["java.util.Map"] }, {"name":"setDetailType","parameterTypes":["java.lang.String"] }, {"name":"setId","parameterTypes":["java.lang.String"] }, {"name":"setRegion","parameterTypes":["java.lang.String"] }, {"name":"setResources","parameterTypes":["java.util.List"] }, {"name":"setSource","parameterTypes":["java.lang.String"] }, {"name":"setTime","parameterTypes":["org.joda.time.DateTime"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.events.models.kinesis.Record",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"setApproximateArrivalTimestamp","parameterTypes":["java.util.Date"] }, {"name":"setData","parameterTypes":["java.nio.ByteBuffer"] }, {"name":"setEncryptionType","parameterTypes":["java.lang.String"] }, {"name":"setPartitionKey","parameterTypes":["java.lang.String"] }, {"name":"setSequenceNumber","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.CloudFormationCustomResourceEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.CloudWatchLogsEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.KinesisEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.KinesisEventMixin$RecordMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.SNSEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.SNSEventMixin$SNSRecordMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.SQSEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.SQSEventMixin$SQSMessageMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.serialization.events.mixins.ScheduledEventMixin",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.tests.EventArgumentsProvider",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.amazonaws.services.lambda.runtime.tests.annotations.Event",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.io.Serializable",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.Cloneable",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredFields":true
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicBoolean",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.function.Consumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.apiguardian.api.API",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.joda.time.DateTime",
+  "methods":[{"name":"parse","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.utilities.EventDeserializerTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testDeserializeALBEventMessageAsObjectShouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent"] }, {"name":"testDeserializeAMQEventMessageAsListShouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ActiveMQEvent"] }, {"name":"testDeserializeAPIGWEventBodyAsObject_shouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent"] }, {"name":"testDeserializeAPIGatewayEventAsList_shouldThrowException","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent"] }, {"name":"testDeserializeAPIGatewayMapEventAsList_shouldThrowException","parameterTypes":["java.util.Map"] }, {"name":"testDeserializeAPIGatewayNoBodyAsList_shouldThrowException","parameterTypes":[] }, {"name":"testDeserializeAPIGatewayNoBody_shouldThrowException","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent"] }, {"name":"testDeserializeApiGWV2EventMessageAsObjectShouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent"] }, {"name":"testDeserializeCWLEventMessageAsObjectShouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.CloudWatchLogsEvent"] }, {"name":"testDeserializeCfcrEventMessageAsObjectShouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.CloudFormationCustomResourceEvent"] }, {"name":"testDeserializeEmptyEventAsList_shouldThrowException","parameterTypes":[] }, {"name":"testDeserializeKFEventMessageAsListShouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisFirehoseEvent"] }, {"name":"testDeserializeKafipEventMessageAsListShouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsFirehoseInputPreprocessingEvent"] }, {"name":"testDeserializeKafkaEventMessageAsList_shouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KafkaEvent"] }, {"name":"testDeserializeKasipEventMessageAsListShouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisAnalyticsStreamsInputPreprocessingEvent"] }, {"name":"testDeserializeKinesisEventMessageAsList_shouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.KinesisEvent"] }, {"name":"testDeserializeMapAsObject_shouldReturnObject","parameterTypes":[] }, {"name":"testDeserializeProductAsProduct_shouldReturnProduct","parameterTypes":[] }, {"name":"testDeserializeRabbitMQEventMessageAsListShouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.RabbitMQEvent"] }, {"name":"testDeserializeSNSEventMessageAsObject_shouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.SNSEvent"] }, {"name":"testDeserializeSQSEventMessageAsList_shouldReturnList","parameterTypes":["com.amazonaws.services.lambda.runtime.events.SQSEvent"] }, {"name":"testDeserializeSQSEventMessageAsObject_shouldThrowException","parameterTypes":["com.amazonaws.services.lambda.runtime.events.SQSEvent"] }, {"name":"testDeserializeSQSEventNoBody_shouldThrowException","parameterTypes":["com.amazonaws.services.lambda.runtime.events.SQSEvent"] }, {"name":"testDeserializeScheduledEventMessageAsObject_shouldReturnObject","parameterTypes":["com.amazonaws.services.lambda.runtime.events.ScheduledEvent"] }, {"name":"testDeserializeStringArrayAsList_shouldReturnList","parameterTypes":[] }, {"name":"testDeserializeStringAsList_shouldThrowException","parameterTypes":[] }, {"name":"testDeserializeStringAsObject_shouldReturnObject","parameterTypes":[] }, {"name":"testDeserializeStringAsString_shouldReturnString","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.utilities.jmespath.Base64FunctionTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testPowertoolsBase64","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.utilities.jmespath.Base64GZipFunctionTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testBase64GzipDecompressNull","parameterTypes":[] }, {"name":"testConstructor","parameterTypes":[] }, {"name":"testPowertoolsGzip","parameterTypes":[] }, {"name":"testPowertoolsGzipEmptyJsonAttribute","parameterTypes":[] }, {"name":"testPowertoolsGzipNotCompressedJsonAttribute","parameterTypes":[] }, {"name":"testPowertoolsGzipWrongArgumentType","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.utilities.jmespath.JsonFunctionTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testJsonFunction","parameterTypes":[] }, {"name":"testJsonFunctionChild","parameterTypes":[] }]
+},
+{
+  "name":"software.amazon.lambda.powertools.utilities.model.Product",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setId","parameterTypes":["long"] }, {"name":"setName","parameterTypes":["java.lang.String"] }, {"name":"setPrice","parameterTypes":["double"] }]
+}
+]
