@@ -324,4 +324,27 @@ public class CloudFormationResponseTest {
                 "}";
         assertThat(stream.getString()).isEqualTo(expectedJson);
     }
+
+    @Test
+    void responseBodyStreamFailedResponseWithReason() throws Exception {
+        CloudFormationCustomResourceEvent event = mockCloudFormationCustomResourceEvent();
+        Context context = mock(Context.class);
+        CloudFormationResponse cfnResponse = testableCloudFormationResponse();
+        String failureReason = "Failed test reason";
+        Response failedResponseWithReason = Response.builder().
+                status(Response.Status.FAILED).reason(failureReason).build();
+        StringInputStream stream = cfnResponse.responseBodyStream(event, context, failedResponseWithReason);
+
+        String expectedJson = "{" +
+                "\"Status\":\"FAILED\"," +
+                "\"Reason\":\"" + failureReason + "\"," +
+                "\"PhysicalResourceId\":null," +
+                "\"StackId\":null," +
+                "\"RequestId\":null," +
+                "\"LogicalResourceId\":null," +
+                "\"NoEcho\":false," +
+                "\"Data\":null" +
+                "}";
+        assertThat(stream.getString()).isEqualTo(expectedJson);
+    }
 }

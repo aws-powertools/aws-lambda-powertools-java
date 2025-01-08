@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import software.amazon.awssdk.utils.StringUtils;
 
 /**
  * Models the arbitrary data to be sent to the custom resource in response to a CloudFormation event. This object
@@ -30,12 +31,22 @@ public class Response {
     private final Status status;
     private final String physicalResourceId;
     private final boolean noEcho;
+    private final String reason;
 
     private Response(JsonNode jsonNode, Status status, String physicalResourceId, boolean noEcho) {
         this.jsonNode = jsonNode;
         this.status = status;
         this.physicalResourceId = physicalResourceId;
         this.noEcho = noEcho;
+        this.reason = null;
+    }
+
+    private Response(JsonNode jsonNode, Status status, String physicalResourceId, boolean noEcho, String reason) {
+        this.jsonNode = jsonNode;
+        this.status = status;
+        this.physicalResourceId = physicalResourceId;
+        this.noEcho = noEcho;
+        this.reason = reason;
     }
 
     /**
@@ -150,6 +161,15 @@ public class Response {
     }
 
     /**
+     * The reason for the failure.
+     *
+     * @return a potentially null reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    /**
      * Includes all Response attributes, including its value in JSON format
      *
      * @return a full description of the Response
@@ -161,6 +181,7 @@ public class Response {
         attributes.put("Status", status);
         attributes.put("PhysicalResourceId", physicalResourceId);
         attributes.put("NoEcho", noEcho);
+        attributes.put("Reason", reason);
         return attributes.entrySet().stream()
                 .map(entry -> entry.getKey() + " = " + entry.getValue())
                 .collect(Collectors.joining(",", "[", "]"));
@@ -182,6 +203,7 @@ public class Response {
         private Status status;
         private String physicalResourceId;
         private boolean noEcho;
+        private String reason;
 
         private Builder() {
         }
@@ -264,6 +286,20 @@ public class Response {
         }
 
         /**
+         * Reason for the response.
+         * Reason is optional for Success responses, but required for Failed responses.
+         * If not provided it will be replaced with cloudwatch log stream name.
+         *
+         * @param reason if null, the default reason will be used
+         * @return a reference to this builder
+         */
+
+        public Builder reason(String reason) {
+            this.reason = reason;
+            return this;
+        }
+
+        /**
          * Builds a Response object for the value.
          *
          * @return a Response object wrapping the initially provided value.
@@ -277,6 +313,9 @@ public class Response {
                 node = mapper.valueToTree(value);
             }
             Status responseStatus = this.status != null ? this.status : Status.SUCCESS;
+            if (StringUtils.isNotBlank(this.reason)) {
+                return new Response(node, responseStatus, physicalResourceId, noEcho, reason);
+            }
             return new Response(node, responseStatus, physicalResourceId, noEcho);
         }
     }

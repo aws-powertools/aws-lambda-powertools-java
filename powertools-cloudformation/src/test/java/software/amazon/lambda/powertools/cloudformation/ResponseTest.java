@@ -33,11 +33,13 @@ public class ResponseTest {
         assertThat(response.getStatus()).isEqualTo(Response.Status.SUCCESS);
         assertThat(response.getPhysicalResourceId()).isNull();
         assertThat(response.isNoEcho()).isFalse();
+        assertThat(response.getReason()).isNull();
 
         assertThat(response.toString()).contains("JSON = null");
         assertThat(response.toString()).contains("Status = SUCCESS");
         assertThat(response.toString()).contains("PhysicalResourceId = null");
         assertThat(response.toString()).contains("NoEcho = false");
+        assertThat(response.toString()).contains("Reason = null");
     }
 
     @Test
@@ -59,6 +61,27 @@ public class ResponseTest {
         assertThat(response.toString()).contains("Status = SUCCESS");
         assertThat(response.toString()).contains("PhysicalResourceId = null");
         assertThat(response.toString()).contains("NoEcho = false");
+    }
+
+    @Test
+    void explicitReasonWithDefaultValues() {
+        String reason = "test";
+        Response response = Response.builder()
+                .reason(reason)
+                .build();
+        assertThat(response).isNotNull();
+        assertThat(response.getJsonNode()).isNull();
+        assertThat(response.getStatus()).isEqualTo(Response.Status.SUCCESS);
+        assertThat(response.getPhysicalResourceId()).isNull();
+        assertThat(response.isNoEcho()).isFalse();
+        assertThat(response.getReason()).isNotNull();
+        assertThat(response.getReason()).isEqualTo(reason);
+
+        assertThat(response.toString()).contains("JSON = null");
+        assertThat(response.toString()).contains("Status = SUCCESS");
+        assertThat(response.toString()).contains("PhysicalResourceId = null");
+        assertThat(response.toString()).contains("NoEcho = false");
+        assertThat(response.toString()).contains("Reason = "+reason);
     }
 
     @Test

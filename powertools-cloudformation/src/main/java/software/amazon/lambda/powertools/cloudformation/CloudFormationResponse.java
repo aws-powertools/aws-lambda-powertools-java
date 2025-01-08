@@ -36,6 +36,7 @@ import software.amazon.awssdk.http.SdkHttpClient;
 import software.amazon.awssdk.http.SdkHttpMethod;
 import software.amazon.awssdk.http.SdkHttpRequest;
 import software.amazon.awssdk.utils.StringInputStream;
+import software.amazon.awssdk.utils.StringUtils;
 
 /**
  * Client for sending responses to AWS CloudFormation custom resources by way of a response URL, which is an Amazon S3
@@ -148,7 +149,9 @@ class CloudFormationResponse {
                 ObjectNode node = body.toObjectNode(null);
                 return new StringInputStream(node.toString());
             } else {
-
+                if (!StringUtils.isBlank(resp.getReason())) {
+                    reason = resp.getReason();
+                }
                 String physicalResourceId = resp.getPhysicalResourceId() != null ? resp.getPhysicalResourceId() :
                         event.getPhysicalResourceId() != null ? event.getPhysicalResourceId() :
                                 context.getLogStreamName();
